@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ActiveLife</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { height: 100%; }
+  body {
+    background: #0f150c;
+    color: #d4ccbf;
+    font-family: Georgia, "Times New Roman", serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 2rem 1rem;
+  }
+  h1 {
+    font-size: clamp(2.2rem, 7vw, 4.5rem);
+    font-weight: 400;
+    letter-spacing: .08em;
+  }
+  img {
+    display: block;
+    width: min(90vw, 640px);
+    max-height: 70vh;
+    object-fit: contain;
+    border-radius: 6px;
+    box-shadow: 0 10px 40px rgba(0,0,0,.6);
+  }
+</style>
+</head>
+<body>
+  <h1>ActiveLife</h1>
+  <img src="image.jpg" alt="ActiveLife">
+</body>
+</html>
