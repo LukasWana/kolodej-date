@@ -1,0 +1,17 @@
+# HP kolodej.date: statický nginx za Cloudflare Tunnel (route kolodej.date -> http://kolodej-date:80).
+# Žádný publikovaný port. Síť brana_net patří /opt/brana/compose.yaml (cloudflared), tady je jen externí.
+# Nasazení na asus-server: scp index.html image.jpg compose.yaml do ~/kolodej-date/, pak docker compose up -d.
+name: kolodej-date
+services:
+  web:
+    image: nginx:alpine
+    container_name: kolodej-date
+    restart: unless-stopped
+    mem_limit: 32m
+    volumes:
+      - ./index.html:/usr/share/nginx/html/index.html:ro
+      - ./image.jpg:/usr/share/nginx/html/image.jpg:ro
+    networks: [brana_net]
+networks:
+  brana_net:
+    external: true
